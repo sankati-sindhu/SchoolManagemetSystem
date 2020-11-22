@@ -18,7 +18,6 @@ public class LoginApp extends Application {
         primaryStage.setTitle("School Management System");
         primaryStage.show();
 
-
     }
 
     public static void main(String[] args) {

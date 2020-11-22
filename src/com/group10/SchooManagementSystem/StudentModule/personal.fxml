@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="728.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.PersonalController">
+   <children>
+      <AnchorPane layoutX="68.0" layoutY="45.0" prefHeight="648.0" prefWidth="911.0" style="-fx-background-color: #fff;">
+         <children>
+            <VBox alignment="CENTER" layoutX="48.0" prefHeight="642.0" prefWidth="341.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="314.0" text="PROFILE" textFill="#3f72af">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="237.0" prefWidth="235.0" style="-fx-background-color: #f9f9f9;" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="441.0" prefHeight="642.0" prefWidth="132.0">
+               <children>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Name" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Roll No" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Subject" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Email Id" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Phone Number" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Grade" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Section" textFill="#112d4e">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="614.0" prefHeight="642.0" prefWidth="287.0">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

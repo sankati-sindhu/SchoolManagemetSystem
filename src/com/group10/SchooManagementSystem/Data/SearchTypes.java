@@ -1,13 +1,13 @@
 package com.group10.SchooManagementSystem.Data;
 
-public enum FilterTypes {
-    userId, firstName, lastName ;
+public enum SearchTypes {
+    Admin, Student, Teacher;
 
-    private FilterTypes(){ }
+    private SearchTypes(){ }
     public String value(){
         return name();
     }
-    public static FilterTypes fromValue(String v){
+    public static SearchTypes fromValue(String v){
         return valueOf(v);
     }
 }

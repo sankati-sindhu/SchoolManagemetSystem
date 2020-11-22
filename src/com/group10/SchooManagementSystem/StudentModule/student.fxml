@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f9f7f7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.StudentController">
+   <children>
+      <VBox alignment="BOTTOM_CENTER" layoutX="-1.0" prefHeight="726.0" prefWidth="257.0" style="-fx-background-color: #112d4e;">
+         <children>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" opacity="0.52" prefHeight="58.0" prefWidth="151.0" style="-fx-background-color: #112d4e;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="2.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="414.0" prefWidth="252.0" style="-fx-background-color: #112d4e;">
+         <children>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadPersonalPane" opacity="0.52" prefHeight="58.0" prefWidth="151.0" style="-fx-background-color: #112d4e;" text="Personal Info" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadAttendance" opacity="0.52" prefHeight="58.0" prefWidth="151.0" style="-fx-background-color: #112d4e;" text="Attendance" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadPerformance" opacity="0.52" prefHeight="58.0" prefWidth="151.0" style="-fx-background-color: #112d4e;" text="Performance" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadFeedback" opacity="0.52" prefHeight="58.0" prefWidth="151.0" style="-fx-background-color: #112d4e;" text="Feedback" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="rootPane" layoutX="257.0" layoutY="-1.0" prefHeight="728.0" prefWidth="1023.0" />
+   </children>
+</AnchorPane>

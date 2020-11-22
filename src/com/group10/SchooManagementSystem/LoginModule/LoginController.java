@@ -3,6 +3,7 @@ package com.group10.SchooManagementSystem.LoginModule;
 import com.group10.SchooManagementSystem.AdminModule.AdminController;
 import com.group10.SchooManagementSystem.StudentModule.StudentController;
 import com.group10.SchooManagementSystem.Data.UserTypes;
+import com.group10.SchooManagementSystem.TeacherModule.TeacherController;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -86,7 +88,7 @@ public class LoginController implements Initializable {
         try {
             Stage studentStage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Pane studentRoot = (Pane) fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/StudentModule/student.fxml").openStream());
+            AnchorPane studentRoot = fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/StudentModule/student.fxml").openStream());
             StudentController studentController = fxmlLoader.getController();
 
             Scene scene = new Scene(studentRoot);
@@ -106,7 +108,7 @@ public class LoginController implements Initializable {
         try {
             Stage adminStage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Pane adminRoot = (Pane) fxmlLoader.load(getClass()
+            AnchorPane adminRoot = fxmlLoader.load(getClass()
                     .getResource("/com/group10/SchooManagementSystem/AdminModule/admin.fxml").openStream());
             AdminController adminController = fxmlLoader.getController();
 
@@ -126,11 +128,11 @@ public class LoginController implements Initializable {
         try {
             Stage teacherStage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            Pane teacherRoot = (Pane) fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/TeacherModule/teacher.fxml").openStream());
-            StudentController studentController = fxmlLoader.getController();
+            AnchorPane teacherRoot = fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/TeacherModule/teacher.fxml").openStream());
+            TeacherController teacherController = fxmlLoader.getController();
             Scene teacherScene = new Scene(teacherRoot);
             teacherStage.setScene(teacherScene);
-            teacherStage.setTitle("Student Module");
+            teacherStage.setTitle("Teacher Module");
             teacherStage.setResizable(true);
             teacherStage.show();
 
