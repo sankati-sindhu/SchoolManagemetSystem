@@ -26,7 +26,6 @@
                               <InnerShadow height="8.93" radius="1.7325" width="0.0" />
                            </effect>
                         </TextField>
-                        <ComboBox fx:id="searchCb" prefHeight="27.0" prefWidth="86.0" promptText="by" />
                         <ComboBox fx:id="filterCb" prefHeight="27.0" prefWidth="86.0" promptText="type" />
                         <Button fx:id="searchBt" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#clickedSearch" style="-fx-background-color: #3f72af;" text="Search" textFill="WHITE" />
                      </children>

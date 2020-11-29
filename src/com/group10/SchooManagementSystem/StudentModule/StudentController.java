@@ -19,11 +19,11 @@ public class StudentController implements Initializable {
 
     private String userId;
     private StudentData studentData;
-    private PersonalModel personalModel;
+    private StudentPersonalModel personalModel;
 
     public StudentController(String userId){
         this.userId = userId;
-        this.personalModel = new PersonalModel(this.userId);
+        this.personalModel = new StudentPersonalModel(this.userId);
 
     }
 
@@ -45,7 +45,7 @@ public class StudentController implements Initializable {
     }
 
     public void loadAttendance(ActionEvent event) {
-        paneLoader.loadPane("/com/group10/SchooManagementSystem/StudentModule/attendance.fxml");
+        paneLoader.loadPane("/com/group10/SchooManagementSystem/StudentModule/attendance.fxml", studentData);
     }
 
     public void loadPerformance(ActionEvent event) {

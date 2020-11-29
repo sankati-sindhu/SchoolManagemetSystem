@@ -23,6 +23,15 @@ public class Attendance {
         this.name = new SimpleStringProperty(name);
         present = new CheckBox();
     }
+
+    public Attendance(String date, String userId, String giverId, String name, String status) {
+        this.date = new SimpleStringProperty(date);
+        this.userId = new SimpleStringProperty(userId);
+        this.status = new SimpleStringProperty(status);
+        this.giverId = new SimpleStringProperty(giverId);
+        this.name = new SimpleStringProperty(name);
+        present = new CheckBox();
+    }
     public String getDate() {
         return date.get();
     }

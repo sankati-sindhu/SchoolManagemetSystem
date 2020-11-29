@@ -1,7 +1,7 @@
 package com.group10.SchooManagementSystem.Data;
 
 public enum SearchTypes {
-	UserId, Name, group;
+	userId, name;
 
 	private SearchTypes(){ }
 	public String value(){

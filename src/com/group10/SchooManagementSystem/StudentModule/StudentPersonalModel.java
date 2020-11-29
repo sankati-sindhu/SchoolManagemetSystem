@@ -9,17 +9,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class PersonalModel {
+public class StudentPersonalModel {
     Connection connection;
     private String userId;
 
-    public PersonalModel(String userId){
+    public StudentPersonalModel(String userId){
         this.userId = userId;
         ConnectDb connectDb = new ConnectDb();
         this.connection = connectDb.getConnection();
     }
 
-    protected StudentData getData() throws SQLException {
+    public StudentData getData() throws SQLException {
         PreparedStatement preparedStatement = null;
         String sqlQuery = "SELECT * \n" +
                 "FROM users " +

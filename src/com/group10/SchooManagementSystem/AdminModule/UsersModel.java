@@ -1,5 +1,7 @@
 package com.group10.SchooManagementSystem.AdminModule;
 
+import com.group10.SchooManagementSystem.Data.StudentData;
+import com.group10.SchooManagementSystem.Data.TeachersData;
 import com.group10.SchooManagementSystem.Data.UserData;
 import com.group10.SchooManagementSystem.databaseUtil.ConnectDb;
 import javafx.collections.FXCollections;
@@ -46,26 +48,31 @@ public class UsersModel {
     }
 
     @FXML
-    public ObservableList<UserData> getSearchData(String by,String byOpt, String typeOpt){
+    public ObservableList<UserData> getSearchData(String by,String byOpt){
         this.userData = FXCollections.observableArrayList();
-        String sqlQuery = "SELECT * FROM users";
+
+        String sqlQuery;
+        if(byOpt.equals("userId")){
+             sqlQuery = "SELECT * FROM users Where userId = ?";
+        }else{
+             sqlQuery = "SELECT * FROM users Where name = ?";
+        }
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try {
+
             preparedStatement = this.connection.prepareStatement(sqlQuery);
-            //preparedStatement.setString(1, typeOpt);
-            //preparedStatement.setString(2, String.valueOf(byOpt));
-            //preparedStatement.setString(3, typeOpt);
+            preparedStatement.setString(1, by);
+//            preparedStatement.setString(2, by);
             resultSet = preparedStatement.executeQuery();
-            //resultSet = (ResultSet) connection.createStatement().executeQuery(sqlQuery);
             while(resultSet.next()){
                 this.userData.add(new UserData(
-                        resultSet.getString(1), resultSet.getString(7),
-                        resultSet.getString(4), resultSet.getString(5),
-                         resultSet.getString(3)));
-                System.out.println(resultSet.getString(1)+ resultSet.getString(7)+
-                        resultSet.getString(4)+ resultSet.getString(5)+
-                        resultSet.getString(6)+ resultSet.getString(3));
+                        resultSet.getString(1), resultSet.getString(2),
+                        resultSet.getString(3), resultSet.getString(4),
+                        resultSet.getString(5)));
+//                System.out.println(resultSet.getString(1)+ resultSet.getString(7)+
+//                        resultSet.getString(4)+ resultSet.getString(5)+
+//                        resultSet.getString(6)+ resultSet.getString(3));
 
             }
 
@@ -77,5 +84,16 @@ public class UsersModel {
             return null;
         }
     }
+
+    public void deleteUser(UserData userData) throws SQLException {
+        PreparedStatement preparedStatement;
+        String sqlQuery = "Delete from users  where userId = ?";
+        // connection.createStatement().executeQuery(sqlQuery);
+        preparedStatement = this.connection.prepareStatement(sqlQuery);
+        preparedStatement.setString(1, userData.getUserId());
+        preparedStatement.execute();
+
+    }
+
 
 }

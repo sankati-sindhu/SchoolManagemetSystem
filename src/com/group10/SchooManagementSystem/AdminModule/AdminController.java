@@ -61,13 +61,13 @@ public class AdminController implements Initializable {
         this.paneLoader.loadPane("/com/group10/SchooManagementSystem/AdminModule/users.fxml");
     }
 
-    public void loadIssuesPane(ActionEvent event) {
-        this.paneLoader.loadPane("/com/group10/SchooManagementSystem/AdminModule/issues.fxml");
-    }
-
-    public void loadLogsPane(ActionEvent event) {
-        this.paneLoader.loadPane("/com/group10/SchooManagementSystem/AdminModule/logs.fxml");
-    }
+//    public void loadIssuesPane(ActionEvent event) {
+//        this.paneLoader.loadPane("/com/group10/SchooManagementSystem/AdminModule/issues.fxml");
+//    }
+//
+//    public void loadLogsPane(ActionEvent event) {
+//        this.paneLoader.loadPane("/com/group10/SchooManagementSystem/AdminModule/logs.fxml");
+//    }
 
 
 

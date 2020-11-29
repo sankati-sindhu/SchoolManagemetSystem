@@ -5,9 +5,9 @@
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.AttendanceController">
+<AnchorPane prefHeight="728.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.StudentAttendanceController">
    <children>
-      <TableView layoutX="313.0" layoutY="44.0" prefHeight="685.0" prefWidth="388.0">
+      <TableView fx:id="attendanceTable" layoutX="313.0" layoutY="44.0" prefHeight="685.0" prefWidth="388.0">
         <columns>
           <TableColumn fx:id="DateCol" prefWidth="100.0" text="Date" />
           <TableColumn fx:id="statusCol" prefWidth="286.4910583496094" text="Status" />

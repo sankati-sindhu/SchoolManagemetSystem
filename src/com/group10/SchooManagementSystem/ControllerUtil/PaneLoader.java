@@ -1,7 +1,10 @@
 package com.group10.SchooManagementSystem.ControllerUtil;
 
+import com.group10.SchooManagementSystem.AdminModule.addController;
 import com.group10.SchooManagementSystem.Data.StudentData;
 import com.group10.SchooManagementSystem.Data.TeachersData;
+import com.group10.SchooManagementSystem.Data.UserData;
+import com.group10.SchooManagementSystem.StudentModule.StudentAttendanceController;
 import com.group10.SchooManagementSystem.StudentModule.StudentPersonalController;
 import com.group10.SchooManagementSystem.TeacherModule.AttendanceController;
 import com.group10.SchooManagementSystem.TeacherModule.PersonalController;
@@ -66,9 +69,9 @@ public class PaneLoader {
             if (type == StudentPersonalController.class) {
                 return new StudentPersonalController(studentData);
             }
-//            else if(type == AttendanceController.class) {
-//                return new AttendanceController(teachersData);
-//            }
+            else if(type == StudentAttendanceController.class) {
+                return new StudentAttendanceController(studentData);
+            }
             else {
                 try {
                     return type.newInstance() ; // default behavior - invoke no-arg construtor
@@ -93,5 +96,33 @@ public class PaneLoader {
     }
 
 
+    public void loadPane(String s, boolean b, UserData userData) {
+
+        Callback<Class<?>, Object> controllerFactory = type -> {
+            if (type == addController.class) {
+                return new addController (b, userData);
+            }
+
+            else {
+                try {
+                    return type.newInstance() ; // default behavior - invoke no-arg construtor
+                } catch (Exception exc) {
+                    System.err.println("Could not create controller for "+type.getName());
+                    throw new RuntimeException(exc);
+                }
+            }
+        };
+        this.rootPane.getChildren().clear();
+        AnchorPane pane = null;
+        try {
+            FXMLLoader firstLoader = new FXMLLoader(getClass().getResource(s));
+            firstLoader.setControllerFactory(controllerFactory);
+            pane = firstLoader.load();
+            this.rootPane.getChildren().setAll(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 

@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class PersonalController implements Initializable {
@@ -16,8 +17,17 @@ public class PersonalController implements Initializable {
     private TeachersData teachersData;
 
     public PersonalController(TeachersData teachersData){
-        this.userId = userId;
+
         this.teachersData = teachersData;
+    }
+    public  PersonalController(String userId){
+        this.userId = userId;
+        PersonalModel personalModel = new PersonalModel(userId);
+        try {
+            this.teachersData = personalModel.getData();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override

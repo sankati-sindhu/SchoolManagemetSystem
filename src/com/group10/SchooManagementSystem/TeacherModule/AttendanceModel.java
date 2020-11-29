@@ -16,7 +16,7 @@ import java.util.Date;
 public class AttendanceModel {
     Connection connection;
     private ObservableList<Attendance> attendances;
-    AttendanceModel(){
+    public AttendanceModel(){
         ConnectDb connectDb = new ConnectDb();
         this.connection = connectDb.getConnection();
     }

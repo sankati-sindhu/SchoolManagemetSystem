@@ -19,6 +19,8 @@ public class PersonalModel {
         this.connection = connectDb.getConnection();
     }
 
+
+
     protected TeachersData getData() throws SQLException {
         PreparedStatement preparedStatement = null;
         String sqlQuery = "SELECT * \n" +
@@ -41,7 +43,9 @@ public class PersonalModel {
                     resultSet.getString(3), resultSet.getString(4)
             ,resultSet.getString(9),resultSet.getString(8),resultSet.getString(10));
         }
-
+//        protected TeachersData getPermissions(){
+//
+//        }
 
 }
 
