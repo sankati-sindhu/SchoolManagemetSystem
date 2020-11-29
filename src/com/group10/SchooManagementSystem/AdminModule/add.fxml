@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.AdminModule.addController">
+<AnchorPane fx:id="a" prefHeight="669.0" prefWidth="1022.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.AdminModule.addController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="780.0" prefHeight="669.0" prefWidth="204.0">
          <children>
@@ -226,22 +226,17 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label contentDisplay="TOP" disable="true" prefHeight="54.0" prefWidth="201.0" text="Department" textFill="#112d4e">
+            <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Department" textFill="#112d4e">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label contentDisplay="TOP" disable="true" prefHeight="54.0" prefWidth="201.0" text="Subject" textFill="#112d4e">
+            <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Grade" textFill="#112d4e">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label contentDisplay="TOP" disable="true" prefHeight="54.0" prefWidth="201.0" text="Grade" textFill="#112d4e">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label contentDisplay="TOP" disable="true" prefHeight="54.0" prefWidth="201.0" text="Section" textFill="#112d4e">
+            <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Section" textFill="#112d4e">
                <font>
                   <Font size="16.0" />
                </font>
@@ -292,7 +287,7 @@
                   <Insets bottom="14.0" top="13.0" />
                </VBox.margin>
             </ComboBox>
-            <TextField fx:id="departmentTf" disable="true">
+            <TextField fx:id="departmentTf">
                <effect>
                   <InnerShadow height="5.91" radius="6.2275" />
                </effect>
@@ -300,7 +295,7 @@
                   <Insets bottom="14.0" top="13.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="subjectTf" disable="true">
+            <TextField fx:id="gradeTf">
                <effect>
                   <InnerShadow height="5.91" radius="6.2275" />
                </effect>
@@ -308,15 +303,7 @@
                   <Insets bottom="14.0" top="13.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="gradeTf" disable="true">
-               <effect>
-                  <InnerShadow height="5.91" radius="6.2275" />
-               </effect>
-               <VBox.margin>
-                  <Insets bottom="14.0" top="13.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField fx:id="sectionTf" disable="true">
+            <TextField fx:id="sectionTf">
                <effect>
                   <InnerShadow height="5.91" radius="6.2275" />
                </effect>

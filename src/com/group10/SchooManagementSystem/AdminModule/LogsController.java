@@ -11,5 +11,4 @@ public class LogsController implements Initializable {
 
     }
 
-
 }

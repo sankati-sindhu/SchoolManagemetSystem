@@ -1,13 +1,16 @@
 package com.group10.SchooManagementSystem.AdminModule;
 
+import com.group10.SchooManagementSystem.Data.SearchTypes;
 import com.group10.SchooManagementSystem.Data.UserData;
 import com.group10.SchooManagementSystem.ControllerUtil.PaneLoader;
+import com.group10.SchooManagementSystem.Data.UserTypes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,6 +30,12 @@ public class UsersController implements Initializable {
     @FXML
     private TableColumn<UserData, String> userIdCol,  nameCol, userTypeCol, emailIdCol, phoneNoCol;
 
+    @FXML
+    private ComboBox<UserTypes> searchCb;
+
+    @FXML
+    private ComboBox<SearchTypes> filterCb;
+
     private UsersModel usersModel;
     private ObservableList<UserData> userData;
     private PaneLoader paneLoader;
@@ -36,6 +45,9 @@ public class UsersController implements Initializable {
         this.usersModel = new UsersModel();
         paneLoader = new PaneLoader(this.rootUserPane);
         this.loadStudentData();
+
+        this.searchCb.setItems(FXCollections.observableArrayList(UserTypes.values()));
+        this.filterCb.setItems(FXCollections.observableArrayList(SearchTypes.values()));
     }
 
     public void loadAdd(ActionEvent event) {
@@ -53,8 +65,6 @@ public class UsersController implements Initializable {
             this.userData = FXCollections.observableArrayList();
             this.userData = this.usersModel.loadStudentData();
             this.setUserTable(this.userData);
-
-
     }
 
 
@@ -73,6 +83,35 @@ public class UsersController implements Initializable {
         this.userData = FXCollections.observableArrayList();
         this.userData = this.usersModel.loadStudentData();
         this.setUserTable(this.userData);
+
+    }
+
+    public void viewUser(ActionEvent event){
+        UserData user = userTable.getSelectionModel().getSelectedItem();
+        if(user == null){
+            System.out.println("user does not exusts");
+            return;
+        }
+        System.out.println("user delete"+user.getUserId());
+
+    }
+
+    public  void editUser(ActionEvent event){
+        UserData user = userTable.getSelectionModel().getSelectedItem();
+        if(user == null){
+            System.out.println("user does not ex");
+        }
+        System.out.println("user delete"+user.getUserId());
+
+    }
+
+    public void deleteUser(ActionEvent event){
+
+        UserData user = userTable.getSelectionModel().getSelectedItem();
+        if(user == null){
+            System.out.println("user does not ex");
+        }
+        System.out.println("user delete"+user.getUserId());
 
     }
 

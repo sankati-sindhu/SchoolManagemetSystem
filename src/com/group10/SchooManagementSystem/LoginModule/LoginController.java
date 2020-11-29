@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -64,10 +65,10 @@ public class LoginController implements Initializable {
                         adminLogin();
                         break;
                     case "Student":
-                        studentLogin();
+                        studentLogin(this.userId.getText());
                         break;
                     case "Teacher":
-                        teacherLogin();;
+                        teacherLogin(this.userId.getText());;
                         break;
                     default:
                         System.out.println("NO such option");
@@ -82,15 +83,28 @@ public class LoginController implements Initializable {
 
     }
 
-    public void studentLogin(){
+    public void studentLogin(String text){
         /*Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader();*/
         try {
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == StudentController.class) {
+                    return new StudentController(text);
+                } else {
+                    try {
+                        return type.newInstance() ; // default behavior - invoke no-arg construtor
+                    } catch (Exception exc) {
+                        System.err.println("Could not create controller for "+type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
             Stage studentStage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            AnchorPane studentRoot = fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/StudentModule/student.fxml").openStream());
-            StudentController studentController = fxmlLoader.getController();
 
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/group10/SchooManagementSystem/StudentModule/student.fxml"));
+            fxmlLoader.setControllerFactory(controllerFactory);
+            AnchorPane studentRoot = fxmlLoader.load();
+            StudentController studentController = fxmlLoader.getController();
             Scene scene = new Scene(studentRoot);
             studentStage.setScene(scene);
             studentStage.setTitle("Student Module");
@@ -105,7 +119,9 @@ public class LoginController implements Initializable {
     }
 
     public void adminLogin(){
+
         try {
+
             Stage adminStage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader();
             AnchorPane adminRoot = fxmlLoader.load(getClass()
@@ -123,12 +139,25 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void teacherLogin(){
+    public void teacherLogin(String text){
 
         try {
+            Callback<Class<?>, Object> controllerFactory = type -> {
+                if (type == TeacherController.class) {
+                    return new TeacherController(text);
+                } else {
+                    try {
+                        return type.newInstance() ; // default behavior - invoke no-arg construtor
+                    } catch (Exception exc) {
+                        System.err.println("Could not create controller for "+type.getName());
+                        throw new RuntimeException(exc);
+                    }
+                }
+            };
             Stage teacherStage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            AnchorPane teacherRoot = fxmlLoader.load(getClass().getResource("/com/group10/SchooManagementSystem/TeacherModule/teacher.fxml").openStream());
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/group10/SchooManagementSystem/TeacherModule/teacher.fxml"));
+            fxmlLoader.setControllerFactory(controllerFactory);
+            AnchorPane teacherRoot = fxmlLoader.load();
             TeacherController teacherController = fxmlLoader.getController();
             Scene teacherScene = new Scene(teacherRoot);
             teacherStage.setScene(teacherScene);

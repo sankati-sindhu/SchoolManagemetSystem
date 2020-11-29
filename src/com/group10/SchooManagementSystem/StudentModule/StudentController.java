@@ -1,12 +1,14 @@
 package com.group10.SchooManagementSystem.StudentModule;
 
 import com.group10.SchooManagementSystem.ControllerUtil.PaneLoader;
+import com.group10.SchooManagementSystem.Data.StudentData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
@@ -15,15 +17,30 @@ public class StudentController implements Initializable {
 
     PaneLoader paneLoader;
 
+    private String userId;
+    private StudentData studentData;
+    private PersonalModel personalModel;
+
+    public StudentController(String userId){
+        this.userId = userId;
+        this.personalModel = new PersonalModel(this.userId);
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         paneLoader = new PaneLoader(rootPane);
+        try {
+            this.studentData = personalModel.getData();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         this.loadPersonalPane();
 
     }
 
     public void loadPersonalPane() {
-        paneLoader.loadPane("/com/group10/SchooManagementSystem/StudentModule/personal.fxml");
+        paneLoader.loadPane("/com/group10/SchooManagementSystem/StudentModule/personal.fxml", studentData);
 
     }
 

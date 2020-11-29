@@ -7,17 +7,17 @@ public class StudentData extends UserData{
 
     private final StringProperty section;
     private final StringProperty grade;
-    private final Attendance studentAttendance;
+//    private final Attendance studentAttendance;
 
 
     public StudentData(String userId, String name,
-                       String mail, String dob, String phone,
-                       String userType, String section,
-                       String grade, Attendance studentAttendance) {
-        super(userId, name, mail, dob, phone, userType);
+                       String mail, String phone,
+                        String section,
+                       String grade) {
+        super(userId, name, mail, phone, "Student");
         this.section = new SimpleStringProperty(section);
         this.grade = new SimpleStringProperty(grade);
-        this.studentAttendance = studentAttendance;
+//        this.studentAttendance = studentAttendance;
     }
 
     public String getSection() {
@@ -44,8 +44,8 @@ public class StudentData extends UserData{
         this.grade.set(grade);
     }
 
-    public Attendance getStudentAttendance() {
-        return studentAttendance;
-    }
+//    public Attendance getStudentAttendance() {
+//        return studentAttendance;
+//    }
 
 }

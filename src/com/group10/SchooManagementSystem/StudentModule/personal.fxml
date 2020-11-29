@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="728.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.PersonalController">
+<AnchorPane prefHeight="728.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group10.SchooManagementSystem.StudentModule.StudentPersonalController">
    <children>
       <AnchorPane layoutX="68.0" layoutY="45.0" prefHeight="648.0" prefWidth="911.0" style="-fx-background-color: #fff;">
          <children>
@@ -27,11 +27,6 @@
                      </font>
                   </Label>
                   <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Roll No" textFill="#112d4e">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label contentDisplay="TOP" prefHeight="54.0" prefWidth="201.0" text="Subject" textFill="#112d4e">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -60,37 +55,32 @@
             </VBox>
             <VBox alignment="CENTER" layoutX="614.0" prefHeight="642.0" prefWidth="287.0">
                <children>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="nameTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="rollnoTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="mailTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="phoneTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="gradeTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="54.0" prefWidth="273.0" text="Some name">
+                  <Label fx:id="sectionTf" prefHeight="54.0" prefWidth="273.0" text="Some name">
                      <font>
                         <Font size="14.0" />
                      </font>

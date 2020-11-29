@@ -20,7 +20,7 @@ public class LoginModel {
     public boolean isLogin(String userId, String password, String type) throws Exception{
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        String sqlQuery = "SELECT * FROM users where userid = ? and password = ? and type = ?";
+        String sqlQuery = "SELECT * FROM users where userId = ? and password = ? and usertype = ?";
         try{
             preparedStatement = this.connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, userId);

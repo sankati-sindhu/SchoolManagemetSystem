@@ -32,17 +32,13 @@ public class UsersModel {
             resultSet = (ResultSet) connection.createStatement().executeQuery(sqlQuery);
             while(resultSet.next()){
                 this.userData.add(new UserData(
-                        resultSet.getString(1), resultSet.getString(7),
-                        resultSet.getString(4), resultSet.getString(5),
-                        resultSet.getString(6), resultSet.getString(3)));
-//                System.out.println(resultSet.getString(1)+ resultSet.getString(7)+
-//                        resultSet.getString(4)+ resultSet.getString(5)+
-//                        resultSet.getString(6)+ resultSet.getString(3));
+                        resultSet.getString(1), resultSet.getString(2),
+                        resultSet.getString(3), resultSet.getString(4),
+                        resultSet.getString(5)));
             }
             return this.userData;
 
         } catch (SQLException throwables) {
-
             throwables.printStackTrace();
             return null;
         }
@@ -66,7 +62,7 @@ public class UsersModel {
                 this.userData.add(new UserData(
                         resultSet.getString(1), resultSet.getString(7),
                         resultSet.getString(4), resultSet.getString(5),
-                        resultSet.getString(6), resultSet.getString(3)));
+                         resultSet.getString(3)));
                 System.out.println(resultSet.getString(1)+ resultSet.getString(7)+
                         resultSet.getString(4)+ resultSet.getString(5)+
                         resultSet.getString(6)+ resultSet.getString(3));

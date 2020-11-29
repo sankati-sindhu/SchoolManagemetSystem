@@ -8,16 +8,14 @@ public class UserData {
     private final StringProperty name;
     private final StringProperty userType;
     private final StringProperty mail;
-    private final StringProperty dob;
     private final StringProperty phone;
 
     public UserData(String userId, String firstName,
-                    String mail, String dob, String phone,
+                    String mail, String phone,
                     String userType){
         this.userId = new SimpleStringProperty(userId );
         this.name = new SimpleStringProperty(firstName );
         this.mail = new SimpleStringProperty(mail );
-        this.dob = new SimpleStringProperty(dob );
         this.phone = new SimpleStringProperty(phone );
         this.userType = new SimpleStringProperty(userType);
     }
@@ -43,10 +41,6 @@ public class UserData {
         this.mail.set(mail);
     }
 
-    public void setDob(String dob) {
-        this.dob.set(dob);
-    }
-
     public void setPhone(String phone) {
         this.phone.set(phone);
     }
@@ -68,15 +62,6 @@ public class UserData {
     public StringProperty mailProperty() {
         return mail;
     }
-
-    public String getDob() {
-        return dob.get();
-    }
-
-    public StringProperty dobProperty() {
-        return dob;
-    }
-
     public String getPhone() {
         return phone.get();
     }
